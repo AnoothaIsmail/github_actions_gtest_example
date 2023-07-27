@@ -1,42 +1,82 @@
 
+#include "gtest/gtest.h"
 
 class C{};
+
 class B{
+
     C* ptr;
+
     public:
-    B(C* addressOfObject) : ptr(addressOfObject) { //B depends on C pointer
+
+    B(C* addressOfObject): ptr{addressOfObject}{
+
+
+
 
     }
+
 };
+
+
+
+
 class A{
+
     B* ptr;
+
     public:
-    A(B* addressOfObject) : ptr(addressOfObject) {//A depends on C pointer
+
+    A(B* addressOfObject): ptr{addressOfObject}{
+
+
+
 
     }
-    bool operation(){
+
+    bool  operation(){
+
         return true;
+
     }
+
 };
 
 
 
-TEST(TestFixtureTestSuite,OperationsTrueTest){
+
+TEST(TestFixtureTestSuite,OperationTrueTest){
+
     //Arrange
+
     C cObj;
+
     B bObj(&cObj);
-    A aObj(&bObj);
+
+    A obj(&bObj);
+
     //Act and Assert
-    ASSERT_FALSE(obj.operation());
+
+    ASSERT_TRUE(obj.operation());
 
 }
 
-TEST(TestFixtureTestSuite,OperationsFalseTest){
+TEST(TestFixtureTestSuite,OperationFalseTest){
+
     //Arrange
+
     C cObj;
+
     B bObj(&cObj);
-    A aObj(&bObj);
+
+    A obj(&bObj);
+
     //Act and Assert
-    ASSERT_TRUE(obj.operation());
+
+    ASSERT_FALSE(obj.operation());
+
+
+
+
 
 }
