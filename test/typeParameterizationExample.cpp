@@ -33,11 +33,11 @@ ITempSensor* createObject<ModelBTempSensor>() { return new ModelBTempSensor(); }
 template <typename T>
 class TempSensorFixture:public testing::Test{
     protected:
-    TempSensorFixture():objUnderTest{createObject<T>()}  //type parameterization -data type to be considered for fixture -
+    TempSensorFixture():objUnderTest{createObject<T>()}{}  //type parameterization -data type to be considered for fixture -
     //Arrange 
     ITempSensor* objUnderTest;
 
-}
+};
 
 typedef Types<ModelATempSensor,ModelBTempSensor> Implementations;
 
