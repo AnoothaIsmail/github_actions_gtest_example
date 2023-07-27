@@ -41,11 +41,11 @@ class TempSensorFixture:public testing::Test{
 
 typedef Types<ModelATempSensor,ModelBTempSensor> Implementations;
 
-TYPED_TEST_SUITE(TempSensorFixture, Implementations) {
+TYPED_TEST_SUITE(TempSensorFixture, Implementations);
 TYPED_TEST(TempSensorFixture,GetTempTest){
-    ASSERT_EQ(objUnderTest->getOutsideTemp(),23)
+    ASSERT_EQ(this->objUnderTest->getOutsideTemp(),23);
 }
-}
+
 /*
 class ModalATempSensorFixture:public testing::Test{
     protected:
