@@ -4,7 +4,7 @@ class DivFunctionTestSuite:public testing::TestWithParam<std::tuple<int,int,int>
 protected:
 DivFunctionTestSuite(){}
 ~DivFunctionTestSuite(){}
-}
+};
 int divFun(int numerator, int denominator){
     if(denominator==0 || denominator<0 ){return 0;}
     return numerator/denominator;
