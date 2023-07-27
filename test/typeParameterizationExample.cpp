@@ -42,7 +42,7 @@ class ModelCTempSensor:public ITempSensor{
 
     int getOutSideTemp(){
 
-        return 25;
+        return 23;
 
     }
 
