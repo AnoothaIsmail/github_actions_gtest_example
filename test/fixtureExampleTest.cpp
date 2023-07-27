@@ -21,7 +21,7 @@ class A{
 
 
 
-TEST(TestFixtureTestSuite, OperationsTrueTest){
+TEST(TestFixtureTestSuite,OperationsTrueTest){
     //Arrange
     C cObj;
     B bObj(&cObj);
@@ -31,7 +31,7 @@ TEST(TestFixtureTestSuite, OperationsTrueTest){
 
 }
 
-TEST(TestFixtureTestSuite, OperationsFalseTest){
+TEST(TestFixtureTestSuite,OperationsFalseTest){
     //Arrange
     C cObj;
     B bObj(&cObj);
