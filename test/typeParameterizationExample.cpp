@@ -36,6 +36,18 @@ class ModelBTempSensor:public ITempSensor{
 
 };
 
+class ModelCTempSensor:public ITempSensor{
+
+    public:
+
+    int getOutSideTemp(){
+
+        return 25;
+
+    }
+
+};
+
 class AutoTempRegulator{
 
     //DIP: Abstraction
@@ -68,6 +80,10 @@ template <>
 
 ITempSensor* createObject<ModelBTempSensor>() { return new ModelBTempSensor(); }
 
+template <>
+
+ITempSensor* createObject<ModelCTempSensor>() { return new ModelCTempSensor(); }
+
  
 
 template <typename T>
@@ -86,7 +102,7 @@ class TempSensorFixture:public testing::Test{
 
  
 
-typedef Types<ModelATempSensor,ModelBTempSensor> Implementations;
+typedef Types<ModelATempSensor,ModelBTempSensor,ModelCTempSensor> Implementations;
 
  
 
